@@ -49,8 +49,8 @@ export const CreateGame = memo<CreateGameProps>(({setRoom}) => {
         const formData = new FormData(event.currentTarget);
         const host = String(formData.get("host") ?? "");
         const roomId = String(formData.get("roomId") ?? "");
-        void createRoom(host, roomId, Boolean(roomError));
-    }, [roomError]);
+        void createRoom(host, roomId, true);
+    }, []);
 
     return (
         <form onSubmit={onSubmit}>
